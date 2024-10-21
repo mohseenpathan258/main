@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan Hydraulics</title>
+
+    <!-- jquery cdn link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- linked styles.css -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- font family Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- link for google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- header section -->
+    <div class="header" id="header">
+        <!-- logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+            Rajasthan Hydraulics
+        </div>
+
+        <!-- it displays when size gets reduce or we can say for mobile devices -->
+        <div class="navbar-icon" onclick="displayNavbar()">
+            <i class="material-icons" id="navbar-icon">menu</i>
+        </div>
+        
+        <!-- navigation bar -->
+        <div class="navbar">
+            <a href="#welcome-section">Home</a>
+            <a href="#about-section">Abouts us</a>
+            <a href="#product-section">Products</a>
+            <a href="#">Gallery</a>
+            <a href="#contact-section">Contact us</a>
+        </div>
+        
+        <!-- phone number -->
+        <div class="phone">
+            <a href="tel:+919950394906">
+                <i class="fas fa-phone-alt"></i>
+                <span>+91 9950394906</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- display on mobile device navbar and mobile number -->
+    <!-- navigation bar -->
+    <div class="navbar-for-mobile" id="navbar-for-mobile">
+        <a href="#welcome-section" onclick="hideNavebar()">Home</a>
+        <a href="#about-section" onclick="hideNavebar()">Abouts us</a>
+        <a href="#product-section" onclick="hideNavebar()">Products</a>
+        <a href="#" onclick="hideNavebar()">Gallery</a>
+        <a href="#contact-section" onclick="hideNavebar()">Contact us</a>
+        <a href="tel:+919950394906" onclick="hideNavebar()" class="phone-mobile">
+            <i class="fas fa-phone-alt"></i>
+            <span>+91 9950394906</span>
+        </a>
+    </div>
+
+    <!-- welcome section -->
+    <div class="welcome-section" id="welcome-section">
+        <!-- welcome image -->
+        <img class="welcome-section-img" src="images/welcome-section4.jpg" alt="Welecome Image">
+        <!-- welcome text box -->
+        <div class="welcome-section-text">
+            <h1 class="anim">To Rajasthan Hydraulics</h1>
+            <h2>Take a look at our quality features</h2>
+            <p>
+                We take the privilege to introduce ourselves as RAJASTHAN Hydraulics one of the Leading company in Hydraulics Components,
+                Hydraulics Values, Hydraulics Cylinders. We offer a wide range of AC & DC Power packs to serve your Hydraulics needs. 
+                Our application are widely used for AC and DC powered hydraulic power pack includes car lifters as 2 post or 4 post lifts
+                and wheel alignment scissor lifts. Our industrial application can be found in Dock levelers, Elevators, Table lifts, parking
+                systems, recycle can presses. Our Dc power pack used as Hydraulic Power solutions for car carriers, Chasis carriers, Bike 
+                carriers, Small Tippers, Electric tippers, Truck tail lifts, Cattle carrying, Garbage tippers and material handling equipments,
+                stackers, pallet trucks.
+            </p>
+            <h2>Our Specialization</h2>
+            <p>
+                RAJASTHAN Hydraulics is a dynamic organisation that has the flexibility to adapt to the changing needs of our continually expanding 
+                client base. We provide complete kits of hydraulics systems which includes hydraulics Cylinders, control valves, AC/DC Power pack
+                with accessories and provide customize hydraulic circuit as per needs.
+            </p>
+
+            <div class="field-of-activity" id="field-of-activity">
+                <h2>FIELD OF ACTIVITY</h2>
+                <ul style="padding-left: 30px; line-height: 40px; color: var(--gray);">
+                    <li>Car parking - 2 post lift , 4 post lift .</li>
+                    <li>Tipping application - Single acting , Double acting .</li>
+                    <li>Recovery trucks - Electric Winch upto 4 ton , Hydraulics winch upto 4 ton.</li>
+                    <li>Tail lift - DC power pack for tail lift 12v / 24v.</li>
+                    <li>Electric tipper.</li>
+                    <li>3 Wheeler tipper.</li>
+                    <li>Stacker - DC Power for stacker.</li>
+                    <li>Dock Leveller - Ac power pack for dock leveller.</li>
+                    <li>Car Carrier - complete kit for car carrier.</li>
+                    <li>Scissor lift - Ac power pack for scissor lift.</li>
+                </ul>
+            </div>
+            <button onclick="displayLearnMore()">Learn More</button>
+        </div>
+    </div>
+
+    <!-- about us section -->
+     <div class="about-section" id="about-section">
+        <div class="about-us-img">
+            <img src="images/about-us.png" alt="">
+        </div>
+        <div class="about-us-text">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores cupiditate nisi qui! Architecto eos impedit doloremque dolorem reprehenderit, corrupti, suscipit delectus dolores beatae, dignissimos distinctio veritatis rerum incidunt cum aut!
+            </p>
+        </div>
+     </div>
+
+     <!-- product section -->
+    <div class="product-section" id="product-section">
+        <h1>Our Products</h1>
+        <div class="product-display">
+            <div class="product-display-text">
+                <h2>40 litre valve with one liver</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos doloremque officia quos repellat illum harum laboriosam illo ad aliquam? Atque explicabo consectetur repellendus similique voluptatem inventore laboriosam illum nulla recusandae.</p>
+                <button>Send Enquiry</button>
+            </div>
+            <div class="product-display-img">
+                <img id="display-img" src="images/product1.jpg" alt="40 litre valve with one liver">
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <img class="img" id="img1" src="images/product1.jpg" alt="40 litre valve with one liver">
+                <h2>SD4/1</h2>
+            </div>
+            <div class="product">
+                <img class="img" id="img2" src="images/product2.jpg" alt="40 litre valve with one liver">
+                <h2>SD5/3</h2>
+            </div>
+            <div class="product">
+                <img class="img" id="img3" src="images/product3.jpg" alt="40 litre valve with one liver">
+                <h2>SD5/3</h2>
+            </div>
+            <div class="product">
+                <img  class="img" id="img4" src="images/product4.jpg" alt="40 litre valve with one liver">
+                <h2>SD5/3</h2>
+            </div>
+            <div class="product">
+                <img  class="img" id="img5" src="images/product1.jpg" alt="40 litre valve with one liver">
+                <h2>SD5/3</h2>
+            </div>
+            <div class="product">
+                <img  class="img" id="img6" src="images/product2.jpg" alt="40 litre valve with one liver">
+                <h2>SD5/3</h2>
+            </div>
+        </div>
+    </div>
+    
+    <!-- contact section -->
+    <div class="container" id="contact-section">
+        <span class="big-circle"></span>
+        <img src="img/shape.png" class="square" alt="" />
+        <div class="form">
+            <div class="contact-info">
+            <h3 class="title">Let's get in touch</h3>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+              dolorum adipisci recusandae praesentium dicta!
+            </p>
+  
+            <div class="info">
+                <div class="information">
+                    <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
+    
+                    <p>Shop No 3, Karni Colony, Harmada, Sikar Road, Jaipur-302013, Rajasthan, India</p>
+                </div>
+                <div class="information">
+                    <i class="fas fa-envelope"></i> &nbsp &nbsp
+                    <p>hydraulicsrajasthan@gmail.com</p>
+                </div>
+                <div class="information">
+                    <i class="fas fa-phone"></i>&nbsp&nbsp
+                    <p>+91 9950394906 | +91 9588254925</p>
+                </div>
+            </div>
+  
+            <div class="social-media">
+                <p>Connect with us :</p>
+                <div class="social-icons">
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+            <div class="contact-form">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+  
+                <form action="index.html" autocomplete="off">
+                    <h3 class="title">Contact us</h3>
+                    <div class="input-container">
+                        <input type="text" name="name" class="input" />
+                        <label for="">Name</label>
+                        <span>Name</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" name="email" class="input" />
+                        <label for="">Email</label>
+                        <span>Email</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="tel" name="phone" class="input" />
+                        <label for="">Phone</label>
+                        <span>Phone</span>
+                    </div>
+                    <div class="input-container textarea">
+                        <textarea name="message" class="input"></textarea>
+                        <label for="">Message</label>
+                        <span>Message</span>
+                    </div>
+                    <input type="submit" value="Send" class="btn" />
+                </form>
+            </div>
+        </div>
+    </div> 
+
+    <!-- footer -->
+    <div class="footer">
+        &copy; 2024 by RAJASTHAN Hydraulics | All Rights Reserved
+    </div>
+
+     <script>
+        // function to show or hide navbar
+        function displayNavbar(){
+            var displayNavbar = document.getElementById("navbar-for-mobile");
+            if (displayNavbar.style.display == "none"){
+                document.getElementById("navbar-icon").innerHTML = "close";
+                displayNavbar.style.display = "flex";
+            }
+            else{
+                document.getElementById("navbar-icon").innerHTML = "menu";
+                displayNavbar.style.display = "none";
+            }
+            
+        }
+
+        // function to hide navbar when clicked any navbar item
+        function hideNavebar(){
+            var displayNavbar = document.getElementById("navbar-for-mobile");
+            displayNavbar.style.display = "none";
+            document.getElementById("navbar-iocn").innerHTML = "menu";
+        }
+
+        // display learnmore of welcome section
+        function displayLearnMore(){
+            var displayLearnMore = document.getElementById("field-of-activity");
+            if (displayLearnMore.style.display == "none"){
+                displayLearnMore.style.display = "block";
+            }
+            else{
+                displayLearnMore.style.display = "none";
+            }
+        }
+
+        // for product display
+        $(document).ready(function(){
+            $(".img").click(function(){
+                $("#display-img").css({"display": "none"});
+                $("#display-img").attr("src", $(this).attr("src")).fadeIn(2000);
+            });
+        });
+
+        // hide header jquery when scroll
+        $(document).ready(function() {
+            var lastScrollTop = 0;
+            $(window).scroll(function() {
+                var currentScrollTop = $(this).scrollTop();
+                if (currentScrollTop > lastScrollTop) {
+                    // Scrolling down
+                    $('#header').css('top', '-71.5px'); // Adjust based on header height
+                } else {
+                    // Scrolling up
+                    $('#header').css('top', '0');
+                }
+                lastScrollTop = currentScrollTop;
+            });
+        });
+
+        // contact section
+        const inputs = document.querySelectorAll(".input");
+
+        function focusFunc() {
+        let parent = this.parentNode;
+        parent.classList.add("focus");
+        }
+
+        function blurFunc() {
+        let parent = this.parentNode;
+        if (this.value == "") {
+            parent.classList.remove("focus");
+        }
+        }
+
+        inputs.forEach((input) => {
+        input.addEventListener("focus", focusFunc);
+        input.addEventListener("blur", blurFunc);
+        });
+    </script>
+</body>
+</html>
