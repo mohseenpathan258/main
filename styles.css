@@ -392,8 +392,9 @@ a {text-decoration: none;}
     }
 
     .product-section{
-        margin-top: 150px;
+        margin-top: 0;
         box-shadow: none;
+        padding-top: 250px;
     }
 
     .product-list{
