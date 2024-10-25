@@ -51,7 +51,7 @@
             <a href="#welcome-section">Home</a>
             <a href="#about-section">Abouts us</a>
             <a href="#product-section">Products</a>
-            <a href="#">Gallery</a>
+            <a id="gallery-section" href="#">Gallery</a>
             <a href="#contact-section">Contact us</a>
         </div>
         
@@ -70,7 +70,7 @@
         <a href="#welcome-section" onclick="hideNavebar()">Home</a>
         <a href="#about-section" onclick="hideNavebar()">Abouts us</a>
         <a href="#product-section" onclick="hideNavebar()">Products</a>
-        <a href="#" onclick="hideNavebar()">Gallery</a>
+        <a href="#" id="gallery-section-mobile" onclick="hideNavebar()">Gallery</a>
         <a href="#contact-section" onclick="hideNavebar()">Contact us</a>
         <a href="tel:+919950394906" onclick="hideNavebar()" class="phone-mobile">
             <i class="fas fa-phone-alt"></i>
@@ -117,7 +117,7 @@
                     <li>Scissor lift - Ac power pack for scissor lift.</li>
                 </ul>
             </div>
-            <button class="anim" onclick="displayLearnMore()">Learn More</button>
+            <button id="learn-more-btn" class="anim" onclick="displayLearnMore()">Learn More</button>
         </div>
     </div>
 
@@ -259,6 +259,46 @@
         </div>
     </div>
 
+    <!-- image gallery -->
+    <div class="image-gallery-container">
+        <i class="material-icons close-image-gallery">close</i>
+        <div class="gallery">
+            <img class="gallery-image" src="" alt="1">
+        </div>
+        <div class="small-images">
+            <img class="img" id="img1" src="images/1.png" alt="1">
+            <img class="img" id="img2" src="images/2.png" alt="2">
+            <img class="img" id="img3" src="images/3.png" alt="3">
+            <img class="img" id="img4" src="images/4.png" alt="4">
+            <img class="img" id="img4" src="images/5.png" alt="5">
+            <img class="img" id="img4" src="images/6.png" alt="6">
+            <img class="img" id="img4" src="images/7.png" alt="7">
+            <img class="img" id="img4" src="images/8.png" alt="8">
+            <img class="img" id="img4" src="images/9.png" alt="9">
+            <img class="img" id="img4" src="images/10.png" alt="10">
+            <img class="img" id="img1" src="images/1.png" alt="1">
+            <img class="img" id="img2" src="images/2.png" alt="2">
+            <img class="img" id="img3" src="images/3.png" alt="3">
+            <img class="img" id="img4" src="images/4.png" alt="4">
+            <img class="img" id="img4" src="images/5.png" alt="5">
+            <img class="img" id="img4" src="images/6.png" alt="6">
+            <img class="img" id="img4" src="images/7.png" alt="7">
+            <img class="img" id="img4" src="images/8.png" alt="8">
+            <img class="img" id="img4" src="images/9.png" alt="9">
+            <img class="img" id="img4" src="images/10.png" alt="10">
+            <img class="img" id="img1" src="images/1.png" alt="1">
+            <img class="img" id="img2" src="images/2.png" alt="2">
+            <img class="img" id="img3" src="images/3.png" alt="3">
+            <img class="img" id="img4" src="images/4.png" alt="4">
+            <img class="img" id="img4" src="images/5.png" alt="5">
+            <img class="img" id="img4" src="images/6.png" alt="6">
+            <img class="img" id="img4" src="images/7.png" alt="7">
+            <img class="img" id="img4" src="images/8.png" alt="8">
+            <img class="img" id="img4" src="images/9.png" alt="9">
+            <img class="img" id="img4" src="images/10.png" alt="10">
+        </div>
+    </div>
+
     <!-- contact section -->
     <div class="container" id="contact-section">
         <span class="big-circle"></span>
@@ -361,22 +401,25 @@
         function hideNavebar(){
             var displayNavbar = document.getElementById("navbar-for-mobile");
             displayNavbar.style.display = "none";
-            document.getElementById("navbar-iocn").innerHTML = "menu";
+            document.getElementById("navbar-icon").innerHTML = "menu";
         }
 
         // display learnmore of welcome section
         function displayLearnMore(){
             var displayLearnMore = document.getElementById("field-of-activity");
+            var learnMoreBtn = document.getElementById("learn-more-btn");
             if (displayLearnMore.style.display == "none"){
                 displayLearnMore.style.display = "block";
+                learnMoreBtn.innerHTML = "Learn Less";
             }
             else{
                 displayLearnMore.style.display = "none";
+                learnMoreBtn.innerHTML = "Learn More";
             }
         }
-
-        // for new product display
-        $(document).ready(function(){
+        
+        $(document).ready(function() {
+            // for new product display
             $(".product").click(function(){
                 $(".product-display-container").css("display", "flex");
                 $("#product-display-img").attr("src", $(this).attr("data"));
@@ -385,10 +428,8 @@
             $(".display-close-icon").click(function(){
                 $(".product-display-container").css("display", "none");
             });
-        });
 
-        // hide header jquery when scroll
-        $(document).ready(function() {
+            // hide header jquery when scroll
             var lastScrollTop = 0;
             $(window).scroll(function() {
                 var currentScrollTop = $(this).scrollTop();
@@ -400,6 +441,25 @@
                     $('#header').css('top', '0');
                 }
                 lastScrollTop = currentScrollTop;
+            });
+
+            // image gallery
+            $("#gallery-section").click(function(){
+                $(".image-gallery-container").show(1000);
+            });
+            $("#gallery-section-mobile").click(function(){
+                $(".image-gallery-container").show(1000);
+            });
+            $(".img").click(function(){
+                $(".gallery").css("background-image", "none");
+                $(".gallery-image").css("display", "block");
+                $(".gallery-image").hide();
+                $(".gallery-image").attr("src", $(this).attr("src")).show(500);
+                // $(".gallery-image").addClass("gallery-image-css");
+            });
+
+            $(".close-image-gallery").click(function(){
+                $('.image-gallery-container').hide(1000);
             });
         });
 
