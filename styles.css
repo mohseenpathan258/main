@@ -348,6 +348,81 @@ img.product-section-heading {
     color: white;
     width: fit-content;
 }
+/* ----------------------------- */
+/* image gallery */
+/* ----------------------------- */
+.image-gallery-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    padding: 40px;
+    display: none;
+    flex-direction: column;
+    z-index: 5000;
+}
+
+.close-image-gallery {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    color: white;
+    background: black;
+    padding: 5px;
+    border-radius: 0 0 0 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.5s; */
+}
+
+.close-image-gallery:hover {
+    background: red;
+    color: white;
+}
+
+.gallery {
+    width: 100%;
+    height: 85%;
+    max-height: 85%;
+    background: #ddd;
+    padding: 10px;
+    background-image: url("images/1.png");
+    background-repeat: no-repeat;
+    background-size: auto 85%;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.small-images {
+    width: 100%;
+    height: 15%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    overflow: auto;
+}
+
+.small-images img {
+    background: #ddd;
+    padding: 5px;
+}
+
 
 /* ------------------------- */
 /* contact section */
@@ -435,6 +510,7 @@ img.product-section-heading {
     }
 
     .about-section{
+        height: fit-content;
         flex-direction: column;
     }
 
@@ -462,7 +538,6 @@ img.product-section-heading {
         width: 250px;
         height: 250px;
     }
-
 }
 
 
