@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Background Image on Hover</title>
+
+    <!-- link for google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- jquery cdn link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- font family Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+        }
+        .lets-chat-container {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 70px;
+            width: 250px;
+            height: 300px;
+            background: #008FD5;
+            border: 1px solid #008FD5;
+            /* border-radius: 10px; */
+        }
+        .lets-chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: 0;
+            background: #008FD5;
+            color: white;
+            /* border-radius: 10px; */
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .chats-container {
+            width: 100%;
+            height: 250px;
+            padding: 10px;
+            /* border-radius:10px 10px 0 0; */
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .chats {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background: white;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .user-img_user-name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #008FD5;
+        }
+
+        .user-img {
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            border-radius: 50%;
+        }
+
+        .user-img img {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        .user-name {
+            color: black;
+        }
+
+        .user-text {
+            color: gray;
+            text-align: justify;
+        }
+
+        .chat-box {
+            width: 100%;
+            height: 48.5px;
+            border: 0;
+            padding: 0 50px 0 10px;
+            color: gray;
+            
+        }
+        .chat-box:focus {
+            outline: none;
+            border: none;
+        }
+
+        .send-btn {
+            display: none;
+            position: fixed;
+            cursor: pointer;
+            right: 35px;
+            bottom: 84px;
+            z-index: 1;
+            color: #008FD5;
+            text-shadow: 0 0 10px rgba(0, 143, 213, 0.5);
+        }
+
+        .send-btn:hover {
+            text-shadow: 0 0 10px rgba(0, 143, 213, 0.3);
+        }
+
+        /* .send-btn:focus {
+            outline: none;
+        } */
+    </style>
+</head>
+<body>
+    <div class="lets-chat-container">
+        <div class="chats-container">
+            <div class="chats" id="rajasthan-hydraulics-chat">
+                <div class="user-img_user-name">
+                    <div class="user-img">
+                        <img src="images/logo.png" alt="">
+                    </div>
+                    <div class="user-name">
+                        Rajasthan hydraulics
+                    </div>
+                </div>
+                
+                <div class="user-text">
+                    This is text from user for telling that we have chat option now
+                </div>
+            </div>
+            
+            <!-- <div class="chats" id="user-chat">
+                <div class="user-img_user-name">
+                    <div class="user-img">
+                        <img src="images/no-user-photo.svg" alt="">
+                    </div>
+                    <div class="user-name">
+                        Mohseen Khan
+                    </div>
+                </div>
+                <div class="user-text">
+                    This is text from user for telling that we have chat option now
+                </div>
+            </div> -->
+        </div>
+        <input class="chat-box" tabindex="1" type="text" placeholder="Let's chat...">
+    </div>
+    <i id="send-btn" tabindex="2" class="material-icons send-btn">send</i>
+    <button class="lets-chat-btn">Let's Chat</button>
+
+    <script>
+        $(document).ready(function(){
+            $(".lets-chat-btn").click(function(){
+                if($(".lets-chat-container").css("display") == "none"){
+                    $(".lets-chat-container").show(500);
+                    $(".send-btn").show(650);
+                }
+                else{
+                    $(".lets-chat-container").hide(500);
+                    $(".send-btn").hide(100);
+                }
+                
+            });
+
+            $("#send-btn").click(function(){
+                var append_chat_rajhyd = '\
+                    <div class="chats" id="rajasthan-hydraulics-chat">\
+                        <div class="user-img_user-name">\
+                            <div class="user-img">\
+                                <img src="images/logo.png" alt="">\
+                            </div>\
+                            <div class="user-name">\
+                                Rajasthan hydraulics\
+                            </div>\
+                        </div>\
+                        <div class="user-text">\
+                            '+$(".chat-box").val().trim().substring(2, )+'\
+                        </div>\
+                    </div>\
+                ';
+
+                var append_chat_user = '\
+                    <div class="chats" id="user-chat">\
+                        <div class="user-img_user-name">\
+                            <div class="user-img">\
+                                <img src="images/no-user-photo.svg" alt="">\
+                            </div>\
+                            <div class="user-name">\
+                                Mohseen Khan\
+                            </div>\
+                        </div>\
+                        <div class="user-text">\
+                            '+$(".chat-box").val()+'\
+                        </div>\
+                    </div>\
+                ';
+
+                if($(".chat-box").val().trim().substring(0, 2) == "@R"){
+                    $(".chats-container").append(append_chat_rajhyd);
+                    $(".chat-box").val(" ");
+                }
+                else{
+                    $(".chats-container").append(append_chat_user);
+                    $(".chat-box").val(" ");
+                }
+                var div = $(".chats-container");
+                div.animate({ scrollTop: div[0].scrollHeight }, 'slow');
+            });
+        });
+    </script>
+</body>
+</html>
